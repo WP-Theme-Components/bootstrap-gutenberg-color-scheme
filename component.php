@@ -11,6 +11,8 @@
 
 namespace WP_Theme_Components\Bootstrap_Gutenberg_Color_Scheme;
 
+use function WP_Theme_Components\get_component_url;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
@@ -82,3 +84,26 @@ function theme_support() {
 }
 
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\theme_support' );
+
+/**
+ * Whether or not to enqueue the stylesheet
+ *
+ * @since 1.0.0
+ * @return bool
+ */
+function maybe_enqueue_stylesheet() {
+	return apply_filters( 'wp_theme_components/maybe_enqueue_stylesheet', true );
+}
+
+/**
+ * Enqueue the color scheme stylesheet
+ *
+ * @since 1.0.0
+ */
+function enqueue_stylesheet() {
+	if ( maybe_enqueue_stylesheet() ) {
+		wp_enqueue_style( 'wp-theme-components/bootstrap-gutenberg-color-scheme', trailingslashit( get_component_url( __FILE__ ) ) . 'style.min.css', array(), '1.0.0' );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_stylesheet' );

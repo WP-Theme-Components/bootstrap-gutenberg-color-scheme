@@ -1,0 +1,16 @@
+{
+  "name": "WP-Theme-Components/bootstrap-gutenberg-color-scheme",
+  "version": "1.0.0",
+  "description": "Gutenberg color scheme for the default Bootstrap styles",
+  "repository": "https://github.com/WP-Theme-Components/bootstrap-gutenberg-color-scheme",
+  "devDependencies": {
+    "autoprefixer": "^6.4.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-nodeunit": "^0.4.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-postcss": "^0.8.0",
+    "grunt-sass": "^2.1.0"
+  },
+  "dependencies": {}
+}
